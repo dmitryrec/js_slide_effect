@@ -32,6 +32,7 @@
   </head>
 
   <body>
+    <h1>Click to cut</h1>
     <div id="wrapper">
       <div id="one">
         <img src="slide_1.png" alt="" />
@@ -43,12 +44,21 @@
     <h1>Art by <a href="https://www.pexels.com/ru-ru/@jibarofoto">Luis Quintero</a></h1>
   </body>
   <script>
-    document.getElementById("wrapper").addEventListener('mousemove', func);
+    let wrap =  document.getElementById("wrapper");
+    wrap.addEventListener('mousemove', func);
     function func(e) {
       let x = e.offsetX;
       let y = e.offsetY;
       document.getElementById("two").style.width = x + "px";
       document.getElementById("two").style.height = y + "px";
     };  
+
+    wrap.addEventListener('click', cut);
+    function cut(e){
+      let x = e.offsetX;
+      let y = e.offsetY;
+      wrap.style.width = x + "px";
+      wrap.style.height = y + "px";
+    }
   </script>
 </html>
