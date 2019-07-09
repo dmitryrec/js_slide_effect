@@ -29,6 +29,11 @@
         text-decoration: none;
         color: blue;
       }
+      #wrapButton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
 
@@ -41,6 +46,9 @@
       <div id="two">
         <img src="slide_2.png" alt="" />
       </div>
+    </div>
+    <div id="wrapButton">
+      <input type="button" value="restart" id="restart">
     </div>
     <h1>Art by <a href="https://www.pexels.com/ru-ru/@jibarofoto">Luis Quintero</a></h1>
   </body>
@@ -61,5 +69,10 @@
       wrap.style.width = x + "px";
       wrap.style.height = y + "px";
     }
+
+    document.querySelector('#restart').addEventListener('click', function(){
+      wrap.style.width = "640px";
+      wrap.style.height = "426px";
+    })
   </script>
 </html>
