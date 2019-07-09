@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slide</title>
+    <style>
+      #wrapper {
+        width: 640px;
+        height: 426px;
+        position: relative;
+        overflow: hidden;
+        margin: 40px auto 20px auto;
+      }
+
+      #one,
+      #two {
+        width: 640px;
+        height: 426px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+      }
+      h1 {
+        text-align: center;
+      }
+      a{
+        text-decoration: none;
+        color: blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="one">
+        <img src="slide_1.png" alt="" />
+      </div>
+      <div id="two">
+        <img src="slide_2.png" alt="" />
+      </div>
+    </div>
+    <h1>Art by <a href="https://www.pexels.com/ru-ru/@jibarofoto">Luis Quintero</a></h1>
+  </body>
+  <script>
+    document.getElementById("wrapper").addEventListener('mousemove', func);
+    function func(e) {
+      let x = e.offsetX;
+      let y = e.offsetY;
+      document.getElementById("two").style.width = x + "px";
+      document.getElementById("two").style.height = y + "px";
+    };  
+  </script>
+</html>
